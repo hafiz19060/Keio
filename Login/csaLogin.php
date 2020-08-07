@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
- <form action="checkLogin.php" method="post">
+ <form action="csacheckLogin.php" method="post">
       
  
     <label for="uname"><b>Username:</b></label>
