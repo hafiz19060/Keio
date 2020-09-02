@@ -64,7 +64,8 @@ input[type=text]:focus {
 </style>
 
 <body>
-<a href = "process.php">Back to Menu</a><br><br>
+<a href = "csaAdminMenu.php">Back to Menu</a><br><br>
+
 <form action = "process.php" method = "post">
 Username:<br>
 <input type = "text" name = "cashierUname"><br>
@@ -72,12 +73,12 @@ Password:<br>
 <input type = "text" name = "cashierPassword"><br>
 Name:<br>
 <input type = "text" name = "cashierName"><br>
-Mobile number (numbers only):<br>
+Mobile number (Without - ):<br>
 <input type = "text" name = "cashierMobileNum"><br>
-IC number (numbers only):<br>
+IC number (Without - ):<br>
 <input type = "text" name = "cashierICNum"><br><br>
 
-<button class="submit">Register</button>
+<input type="submit" name = "register" value = "Submit">
 
 </form>
 

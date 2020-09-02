@@ -1,3 +1,42 @@
+<?php
+session_start();
+echo "Welcome ".$_SESSION['id'];
+
+?>
+<html>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  var en = 'AM';
+  m = checkTime(m);
+  s = checkTime(s);
+  if(h>12){
+	  en='PM';
+	  
+  }
+  if(h>12){
+	  h = h - 12;
+  }
+  if(h==0){
+	  
+	  h=12;
+  }
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s + ' ' +en;
+  var t = setTimeout(startTime, 500);
+  
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+<body onload="startTime()">
+
+<div id="txt"></div>
 <html>
 <style>
 body {
@@ -34,7 +73,10 @@ a:hover, a:active {
 </style>
 
 <div class="center">
-<p><a href="Login/csaLogout.php">Log Out</a></p>
+<p><a href="Login/csaLogin.php">Log Out</a></p>
+<a href = "csaCashierProfile.php">View Profile</a><br><br>
+<a href = "csaCashierAddStock.php">Add new stocks</a><br><br>
+<a href = "csaCashierItem.php">Items</a><br><br>
 
 
 </div>

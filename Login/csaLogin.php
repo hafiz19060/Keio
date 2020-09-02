@@ -37,6 +37,7 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: lightyellow;
+  color = red;	
 }
 
 input[type=password] {
@@ -77,9 +78,27 @@ input[type=password]:focus {
   background-color: coral;
   color: black;
 }
+input[type = submit]{
+	  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  font-family: "Lucida Console", Courier, monospace;
+	
+	
+}
 
-
-
+.placeholder{
+	
+	color:red;
+}
 
 img {
   display: block;
@@ -96,13 +115,21 @@ img {
 
 
  <form action="csacheckLogin.php" method="post">
+
       
     <label for="uname"><b>Username:</b></label><br>
-    <input type="text" placeholder="Enter Your ID" name="id"  > <br>
+    <input type="text" placeholder="Enter Your ID" name="id" required > <br>
 
     <label for="psw"><b>Password:</b></label><br>
-    <input type="password" placeholder="Enter Your Password" name="psw" > <br><br>
+    <input type="password" placeholder="Enter Your Password" name="psw" required> <br><br>
 
-   <button class="submit">Log In</button>
+   <input type ="submit" name = "submit">
+ 
 </form>
 </body>
+</html>
+<?php
+session_start();
+
+
+?>

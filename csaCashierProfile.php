@@ -80,7 +80,8 @@ function checkTime(i) {
 <body onload="startTime()">
 
 <div id="txt"></div>
-<a href = "csaAdminMenu.php">Return to Menu</a><br><br>
+
+<a href = "csaCashierMenu.php">Return to Menu</a><br><br>
 
 </html>
 <?php
@@ -98,7 +99,7 @@ echo "<table border='1' width='1000'>
 	<th>Username</th>
 	<th>Password</th>
 	<th>User type</th>
-	<th>Action</th>
+	
 
 	</tr>"; 
 	
@@ -108,18 +109,12 @@ while($row=mysqli_fetch_assoc($i)){
 	echo "<td>".$row['password']."</td>";
 	echo "<td>".$row['usertype']."</td>";
 	$uname = $row['username'];
-	echo '<td>';
-	echo '<form action="csaEditAdminProfile.php" method="post" >';
-			echo "<input type='hidden' value=$uname name='unameEdit'>";
-			echo '<input type="submit" name="update" value="Edit">';
-			echo '</form>';
-		echo '</td>';
+	
 echo "</tr>";
 	
 }
 echo "</table>"; 
 //echo $id;
-
 
 
 
