@@ -62,14 +62,36 @@ a:hover, a:active {
   background-color: coral;
 }
 
- .center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+input[type=text] {
+  width: 30%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
   
+  border: 2px solid coral;
+  outline: none;
+}
+
+input[type=text]:focus {
+  background-color: lightyellow;
+}
+
+input[type = submit]{
+	  background-color: coral; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  font-family: "Lucida Console", Courier, monospace;
+	
+	
+}
 </style>
 
 <div class="center">

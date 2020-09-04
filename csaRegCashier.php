@@ -35,8 +35,8 @@ input[type=text]:focus {
   background-color: lightyellow;
 }
 
-.submit {
-  background-color: #4CAF50; /* Green */
+input[type = submit]{
+	  background-color: coral; 
   border: none;
   color: white;
   padding: 16px 32px;
@@ -48,19 +48,9 @@ input[type=text]:focus {
   transition-duration: 0.2s;
   cursor: pointer;
   font-family: "Lucida Console", Courier, monospace;
+	
+	
 }
-
-.submit {
-  background-color: white;
-  color: black;
-  border: 2px solid coral;
-}
-
-.submit:hover {
-  background-color: coral;
-  color: black;
-}
-
 </style>
 
 <body>

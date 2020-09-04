@@ -38,14 +38,22 @@ input[type=text]:focus {
   background-color: lightyellow;
 }
 
-input[type=submit] {
-  background-color: lightyellow;
-  border: 2px solid coral;
-  color: black;
+input[type = submit]{
+	  background-color: coral; 
+  border: none;
+  color: white;
   padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
-  margin: 2px 2px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
   cursor: pointer;
+  font-family: "Lucida Console", Courier, monospace;
+	
+	
+}
 </style>
 <script>
 function startTime() {
