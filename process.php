@@ -2,7 +2,14 @@
 include "csa.php";
 
 if(isSet($_POST['register'])){
-	user();
+	$user = $_POST["cashierUname"];
+	$pass = $_POST["cashierPassword"];
+	$name = $_POST["cashierName"];
+	$mobile = $_POST['cashierMobileNum'];
+	$ic = $_POST['cashierICNum'];
+	
+	user($user,$pass,$name,$mobile,$ic);
+	
 	echo "<script>";
 	echo " alert('Succesfully registered!');
 		</script>";

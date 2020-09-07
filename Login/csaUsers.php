@@ -7,10 +7,14 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql= "SELECT * FROM users where username = '".$username ."' and password ='".$password."'";
-$result=mysqli_query($con,$sql);
-$count=mysqli_num_rows($result); 
-if($count == 1){
+$qry = "select password from users where username = '".$username."'";
+$result = mysqli_query($con,$qry);
+
+$row = mysqli_fetch_assoc($result);
+
+$dbpw = password_verify($password,$row['password']);
+
+if($dbpw == 1){
 	return true;
 }
 else
@@ -35,7 +39,19 @@ if($count == 1){
 	return $usertype;
 	}
  }
+function testpassword($password){
+	$con=mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	$sql = "SELECT * FROM users where password = '".$password."'";
+	$qry = mysqli_query($con,$sql);
+	return $qry;
 	
+	
+}
 	
 
 ?>

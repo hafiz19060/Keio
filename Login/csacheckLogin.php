@@ -6,8 +6,10 @@ $_SESSION['psw']=$_POST['psw'];
 $_SESSION['curTime']=time('G:i:sa');
 
 $username=$_POST['id']; 
-$password=$_POST['psw'];  
+$password=$_POST['psw']; 
  
+
+
 $validUser = validatePassword($username,$password);
 
 
@@ -27,6 +29,6 @@ if($validUser)
 else {
 	
 	echo "<center><br><br>Wrong Username or Password";
-	header( "refresh:1; url=csaLogin.php" );
+	//header( "refresh:1; url=csaLogin.php" );
 	}
 ?>

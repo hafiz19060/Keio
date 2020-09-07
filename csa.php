@@ -1,5 +1,5 @@
 <?php
-function user(){
+function user($user,$pass,$name,$mobile,$ic){
 	
 	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
 if(!$con)
@@ -8,17 +8,15 @@ if(!$con)
 	exit;
 	
 	}
-$user = $_POST['cashierUname'];
-$pass = $_POST['cashierPassword'];
-$name = $_POST['cashierName'];
-$mobile = $_POST['cashierMobileNum'];
-$ic = $_POST['cashierICNum'];
+	
+$passHash = password_hash($pass,PASSWORD_BCRYPT,["cost"=>8]);
 
 $sql = "INSERT INTO users (username,password,usertype)
-VALUES ('$user','$pass','cashier')";
+VALUES ('$user','$passHash','cashier')";
 $qry = mysqli_query($con,$sql);
-$sql = "INSERT INTO cashier (username,password,name,mobilenum,icnum) VALUES ('$user','$pass','$name','$mobile','$ic')";
+$sql = "INSERT INTO cashier (username,password,name,mobilenum,icnum) VALUES ('$user','$passHash','$name','$mobile','$ic')";
 $qry = mysqli_query($con,$sql);
+return $passHash;
 	
 	
 }
@@ -95,8 +93,9 @@ if(!$con)
 	$oldid = $_POST['uname'];
 	$newid = $_POST['newUname'];
 	$pw = $_POST['password'];
+	$passHash = password_hash($pw,PASSWORD_BCRYPT,["cost"=>8]);
 	
-	$sql = 'update users SET username ="'.$newid.'", password = "'.$pw.'" WHERE username = "'.$oldid.'"';
+	$sql = 'update users SET username ="'.$newid.'", password = "'.$passHash.'" WHERE username = "'.$oldid.'"';
 	//echo $sql;
 $qry = mysqli_query($con,$sql);
 return $qry;
