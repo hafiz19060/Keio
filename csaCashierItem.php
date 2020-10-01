@@ -67,6 +67,7 @@ echo '
 <input type=submit name = searchsku value="By SKU">
 <input type=submit name = searchcategories value="By categories">
 <input type=submit name = searchprice value="By price">
+<input type=submit name =searchid value ="By id">
 <input type=submit name = displayAll value="Display All">
 </fieldset>
 </form>';
@@ -79,6 +80,8 @@ else if(isSet($_POST['searchcategories']))
 	$qry = finditembycategories(); 
 else if(isSet($_POST['searchprice']))
 	$qry = finditembyprice();
+else if(isSet($_POST['searchid']))
+	$qry = finditembyid();
 else
 	$qry = viewItems();
 
@@ -91,6 +94,7 @@ echo 'No of items: '.mysqli_num_rows($qry);
 	<th>SKU</th>
 	<th>Categories</th>
 	<th>Price</th>
+	<th>Id</th>
 	</tr>"; 
 
 	while($row=mysqli_fetch_assoc($qry))
@@ -100,6 +104,7 @@ echo 'No of items: '.mysqli_num_rows($qry);
 	echo "<td>" . $row['sku'] . "</td>";
 	echo "<td>" . $row['categories'] . "</td>";
 	echo "<td>" . $row['price'] . "</td>";
+	echo "<td>" . $row['id'] . "</td>";
 	$sku = $row['sku'];
 	echo '<td>';
 	echo '<form action="process.php" method="post" >';

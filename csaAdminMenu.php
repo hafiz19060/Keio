@@ -80,7 +80,9 @@ a:hover, a:active {
 <a href = "csaAdminProfile.php">View Profile</a><br><br>
 <a href = "csaRegCashier.php">Register Cashier</a><br><br>
 <a href = "csaAdminItem.php">Items</a><br><br>
-<a href = "csaAddStock.php">Add new stocks</a><br>
+<a href = "csaAddStock.php">Add new stocks</a><br><br>
+<a href = "csaAdminDeleteCashier.php">Delete cashier</a><br><br>
+<a href = "csaAdminViewTransaction.php">View transaction</a><br>
 <br>
 
 </div>

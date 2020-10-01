@@ -96,9 +96,11 @@ input[type = submit]{
 
 <div class="center">
 <p><a href="Login/csaLogin.php">Log Out</a></p>
+<a href = "testshoppingcart.php">Begin POS</a><br><br>
 <a href = "csaCashierProfile.php">View Profile</a><br><br>
 <a href = "csaCashierAddStock.php">Add new stocks</a><br><br>
 <a href = "csaCashierItem.php">Items</a><br><br>
+<a href = "csaCashierViewTransaction.php">View transaction</a><br><br>
 
 
 </div>

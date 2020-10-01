@@ -64,6 +64,8 @@ Categories:<br>
 <input type = "text" name = "categories"><br>
 Price:<br>
 <input type = "text" name = "price"><br><br>
+ID:<br>
+<input type = "text" name = "id"><br><br>
 
 <input type = "submit" name = "addStock" value = "Register">
 

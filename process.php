@@ -1,6 +1,8 @@
 <?php
 include "csa.php";
 
+
+
 if(isSet($_POST['register'])){
 	$user = $_POST["cashierUname"];
 	$pass = $_POST["cashierPassword"];
@@ -79,6 +81,23 @@ if(isSet($_POST['cashierAddStock'])){
 	echo " alert('Succesfully registered!');
 		</script>";
 	header( "refresh:1; url=csaCashierMenu.php" );
+	
+}
+
+if(isSet($_POST['deleteCashier'])){
+	deleteCashier();
+echo "<script>";
+	echo " alert('Cashier have been deleted!');
+		</script>";
+	header( "refresh:1; url=csaAdminDeleteCashier.php" );
+	
+}
+if(isSet($_POST['deleteTran'])){
+	deleteTransaction();
+echo "<script>";
+	echo " alert('Transaction have been deleted!');
+		</script>";
+	header( "refresh:1; url=csaAdminDeleteCashier.php" );
 	
 }
 

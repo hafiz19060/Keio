@@ -66,6 +66,7 @@ $itemName = $row['itemName'];
 $sku = $row['sku'];
 $categories = $row['categories'];
 $price = $row['price'];
+$id = $row['id'];
 
 
 echo '<form action = "process.php" method ="post"> ';
@@ -81,6 +82,8 @@ echo "<input type = 'text' name = 'categories' value = '$categories'>";
 echo '<br>';
 echo 'Price:<br>';
 echo "<input type = 'text' name = 'price' value = '$price'>";
+echo 'ID:<br>'
+echo "<input type = 'text' name = 'price' value = '$id'>";
 echo '<input type = "submit" name = "cashierupdateitem" value = "Save">';
 echo '</form>';
 

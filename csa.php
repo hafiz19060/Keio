@@ -113,8 +113,9 @@ if(!$con)
 	$sku = $_POST['sku'];
 	$categories=$_POST['categories'];
 	$price = $_POST['price'];
+	$id = $_POST['id'];
 	
-	$sql = "insert into stock (itemName,sku,categories,price) values ('$itemName','$sku','$categories','$price')";
+	$sql = "insert into stock (itemName,sku,categories,price,id) values ('$itemName','$sku','$categories','$price',$id)";
 	$qry = mysqli_query($con,$sql);	
 	
 
@@ -128,6 +129,19 @@ if(!$con)
 	
 	}
 	$sql = 'select * from stock where itemName = "'.$_POST['searchValue'].'"';
+	$qry = mysqli_query($con,$sql);
+	return $qry;
+}
+	
+function finditembyid(){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	
+	}
+	$sql = 'select * from stock where id = "'.$_POST['searchValue'].'"';
 	$qry = mysqli_query($con,$sql);
 	return $qry;
 	
@@ -235,12 +249,91 @@ if(!$con)
 	$newsku = $_POST['newsku'];
 	$categories = $_POST['categories'];
 	$price = $_POST['price'];
+	$id = $_POST['id'];
 	
-	$sql = 'update stock SET itemName ="'.$itemName.'", sku ="'.$newsku.'", categories = "'.$categories.'",price = "'.$price.'" WHERE sku = "'.$oldsku.'"';
+	$sql = 'update stock SET itemName ="'.$itemName.'", sku ="'.$newsku.'", categories = "'.$categories.'",price = "'.$price.'",id = "'.$id.'" WHERE sku = "'.$oldsku.'"';
 	//echo $sql;
 $qry = mysqli_query($con,$sql);
 return $qry;
+}
+function addtoTransaction($itemQuantity,$itemPrice,$total_price){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
 	
+	}
+	$sql = "insert into transaction (quantity,price,totalprice,method) values ('$itemQuantity','$itemPrice','$total_price','Cash')";
+	$qry = mysqli_query($con,$sql);
+}
+function addtoTranBank($itemQuantity,$itemPrice,$total_price){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	
+}
+$sql = "insert into transaction (quantity,price,totalprice,method) values ('$itemQuantity','$itemPrice','$total_price','Bank')";
+	$qry = mysqli_query($con,$sql);
+}
+function viewCashier(){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	}
+	
+	$sql = 'select * from cashier';
+	$qry = mysqli_query($con,$sql);
+	mysqli_close($con);
+		return $qry;
+	
+	
+
+}
+function deleteCashier(){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	
+}
+	$name = $_POST['nametodelete'];
+	$sql = "delete from cashier where username = '".$name."'";
+	$qry = mysqli_query($con,$sql);
+}
+
+function viewTransaction(){
+		$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	
+}
+	$sql = 'select * from transaction';
+	$qry = mysqli_query($con,$sql);
+	mysqli_close($con);
+		return $qry;
+	
+	
+	
+}
+function deleteTransaction(){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	
+}
+	$name = $_POST['nametodelete'];
+	$sql = "delete from cashier where name = '".$name."'";
+	$qry = mysqli_query($con,$sql);
 	
 	
 }
