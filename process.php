@@ -97,7 +97,7 @@ if(isSet($_POST['deleteTran'])){
 echo "<script>";
 	echo " alert('Transaction have been deleted!');
 		</script>";
-	header( "refresh:1; url=csaAdminDeleteCashier.php" );
+	header( "refresh:1; url=csaAdminViewTransaction.php" );
 	
 }
 

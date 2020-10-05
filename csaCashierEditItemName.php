@@ -81,9 +81,9 @@ echo 'Categories:<br>';
 echo "<input type = 'text' name = 'categories' value = '$categories'>";
 echo '<br>';
 echo 'Price:<br>';
-echo "<input type = 'text' name = 'price' value = '$price'>";
-echo 'ID:<br>'
-echo "<input type = 'text' name = 'price' value = '$id'>";
+echo "<input type = 'text' name = 'price' value = '$price'><br>";
+echo 'ID:<br>';
+echo "<input type = 'text' name = 'id' value = '$id'><br>";
 echo '<input type = "submit" name = "cashierupdateitem" value = "Save">';
 echo '</form>';
 

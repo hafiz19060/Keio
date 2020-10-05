@@ -3,7 +3,7 @@ include "csa.php";
 include "paywithBank.php";
 
 if(isSet($_POST['cash'])){
-	addtoTransaction($itemQuantity,$itemPrice,$total_price);
+	addtoTransaction($itemId,$itemName,$itemQuantity,$itemPrice,$total_price);
 	$cash = $_POST['amount'];
 	$balance = $cash - $total_price;
 
@@ -18,7 +18,7 @@ if($cash > $balance){
 	
 }
 if(isSet($_POST['bank'])){
-	addtoTranBank($itemQuantity,$itemPrice,$total_price);
+	addtoTranBank($itemId,$itemName,$itemQuantity,$itemPrice,$total_price);
 	$balance = $total_price - $total_price;
 	echo '<br>Thank you for your purchase!';
 	

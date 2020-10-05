@@ -52,6 +52,20 @@ if(!$con)
 	
 	
 }
+function shift($username){
+	$con=mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo  mysqli_connect_error(); 
+	exit;
+	}
+	
+	$sql = "insert into shift (name,date) values ('$username',now())";
+	$qry = mysqli_query($con,$sql);	
+	
+	
+	
+}
 	
 
 ?>

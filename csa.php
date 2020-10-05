@@ -256,7 +256,7 @@ if(!$con)
 $qry = mysqli_query($con,$sql);
 return $qry;
 }
-function addtoTransaction($itemQuantity,$itemPrice,$total_price){
+function addtoTransaction($itemId,$itemName,$itemQuantity,$itemPrice,$total_price){
 	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
 if(!$con)
 	{
@@ -264,10 +264,10 @@ if(!$con)
 	exit;
 	
 	}
-	$sql = "insert into transaction (quantity,price,totalprice,method) values ('$itemQuantity','$itemPrice','$total_price','Cash')";
+	$sql = "insert into transaction (id,itemName,quantity,price,totalprice,method,date) values ('$itemId','$itemName','$itemQuantity','$itemPrice','$total_price','Cash',now())";
 	$qry = mysqli_query($con,$sql);
 }
-function addtoTranBank($itemQuantity,$itemPrice,$total_price){
+function addtoTranBank($itemId,$itemName,$itemQuantity,$itemPrice,$total_price){
 	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
 if(!$con)
 	{
@@ -275,7 +275,7 @@ if(!$con)
 	exit;
 	
 }
-$sql = "insert into transaction (quantity,price,totalprice,method) values ('$itemQuantity','$itemPrice','$total_price','Bank')";
+$sql = "insert into transaction (id,itemName,quantity,price,totalprice,method,date) values ('$itemId','$itemName','$itemQuantity','$itemPrice','$total_price','Bank',now())";
 	$qry = mysqli_query($con,$sql);
 }
 function viewCashier(){
@@ -331,9 +331,40 @@ if(!$con)
 	exit;
 	
 }
-	$name = $_POST['nametodelete'];
-	$sql = "delete from cashier where name = '".$name."'";
+	$date = $_POST['datetodelete'];
+	$sql = "delete from transaction where date = '".$date."'";
+	
 	$qry = mysqli_query($con,$sql);
+	
+	
+}
+function salesReport(){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	
+}
+	$sql = 'select sum(totalprice) as total from transaction';
+	$qry = mysqli_query($con,$sql);
+	return $qry;
+	
+	
+	
+}
+function viewShiftReport(){
+	$con = mysqli_connect("localhost","g04","g04","csa_g04_39");
+if(!$con)
+	{
+	echo mysqli_connect_error();
+	exit;
+	}
+	$sql = 'select * from shift';
+	$qry = mysqli_query($con,$sql);
+	mysqli_close($con);
+		return $qry;
+	
 	
 	
 }

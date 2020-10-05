@@ -3,7 +3,7 @@ include "csa.php";
 echo '<a href = "csaAdminMenu.php">Go back</a><br>';
 $qry = viewTransaction();
 
-echo 'No of transactions: '.mysqli_num_rows($qry);
+//echo 'No of transactions: '.mysqli_num_rows($qry);
 	echo '<br>';
 	
 	echo "<table border='1' width='1000'>
@@ -25,15 +25,17 @@ echo 'No of transactions: '.mysqli_num_rows($qry);
 	echo "<td>" . $row['totalprice'] . "</td>";
 	echo "<td>" . $row['method'] . "</td>";
 	echo "<td>" . $row ['date'] . "</td>";
-	$date = $row['date'];
+
 	
-	echo '<td>';
-	echo '<form action="process.php" method="post" >';
-			echo "<input type='hidden' value='$date' name='datetodelete'>";
-			echo '<input type="submit" name="deleteTran" value="Delete">';
-			echo '</form>';
-		echo '</td>';
+	
 		}
 		echo '</table>';
-		
+		echo '<br>';
+$qry2 = salesReport();
+if($row2 = mysqli_fetch_assoc($qry2)){
+	echo "Total sales is : RM " . $row2['total'];
+	
+	
+	
+}
 ?>
