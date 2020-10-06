@@ -54,6 +54,9 @@ input[type = submit]{
 	
 	
 }
+	
+	
+}
 </style>
 <script>
 function startTime() {

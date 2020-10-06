@@ -1,5 +1,6 @@
 <html>
 <style>
+
 body {
 	
 	background-color:#6694A4; 
@@ -50,7 +51,6 @@ input[type = submit]{
   transition-duration: 0.2s;
   cursor: pointer;
   font-family: "Lucida Console", Courier, monospace;
-	
 	
 }
 </style>
