@@ -76,7 +76,7 @@ a:hover, a:active {
 
 <body>
 <div class="center">
-<p><a href="Login/csaLogout.php">Log Out</a></p>
+<p><a href="index.php">Log Out</a></p>
 <a href = "csaAdminProfile.php">View Profile</a><br><br>
 <a href = "csaRegCashier.php">Register Cashier</a><br><br>
 <a href = "csaAdminItem.php">Items</a><br><br>

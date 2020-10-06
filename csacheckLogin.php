@@ -17,10 +17,10 @@ if($validUser)
 	{
 	$usertype=getUserType($username);
 	if($usertype =='admin'){
-		header("location:../csaAdminMenu.php"); 
+		header("location: csaAdminMenu.php"); 
 	}
 	else if($usertype =='cashier'){
-		header("location:../csaCashierMenu.php"); 
+		header("location: csaCashierMenu.php"); 
 	}
 	else
 		echo'error';

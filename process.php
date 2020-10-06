@@ -32,7 +32,7 @@ if(isSet($_POST['save'])){
 	echo "<script>";
 	echo " alert('Succesfully change Username and Password!,Please re-login');
 		</script>";
-	header( "refresh:1; url=Login/csaLogin.php" );
+	header( "refresh:1; url=index.php" );
 	
 }
 if(isSet($_POST['addStock'])){
