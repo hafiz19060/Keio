@@ -1,10 +1,9 @@
 <html>
 
 <style>
-
 body {
 	
-	background-color:#6694A4; 
+ background-color: #6694A4; 
     
   text-align:center;
   
@@ -30,6 +29,7 @@ input[type=text] {
   padding: 10px 10px;
   margin: 8px 0;
   box-sizing: border-box;
+   font-family: "Lucida Console", Courier, monospace;
   
   border: 2px solid coral;
   outline: none;
@@ -39,19 +39,26 @@ input[type=text]:focus {
   background-color: lightyellow;
 }
 
-input[type = submit]{
-	  background-color: coral; 
+
+input[type=password] {
+  width:30%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid coral;
+  outline: none;
+   font-family: "Lucida Console", Courier, monospace;
+}
+
+input[type=password]:focus {
+   background-color: lightyellow;
+}
+
+input[type = submit], input[type=button]{
+	background-color: coral; 
   border: none;
   color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.2s;
-  cursor: pointer;
-  font-family: "Lucida Console", Courier, monospace;
+ 
 	
 	
 }
@@ -61,6 +68,7 @@ input[type = submit]{
 <?php   
 
  session_start();
+echo '<br>';
 echo '<a href = "csaCashierMenu.php">Go back</a>';
  $connect = mysqli_connect("localhost", "g04", "g04", "csa_g04_39");  
  if(isset($_POST["add_to_cart"]))  
@@ -122,7 +130,8 @@ echo '<a href = "csaCashierMenu.php">Go back</a>';
            <br />  
            <div class="container" style="width:700px;">  
                 <h3 align="center"></h3><br />  
-                <?php  
+                <?php
+echo '<h2>Shopping cart</h2><br>';				
                 $query = "SELECT * FROM stock order by id  ";  
                 $result = mysqli_query($connect, $query);  
                 if(mysqli_num_rows($result) > 0)  
@@ -134,12 +143,12 @@ echo '<a href = "csaCashierMenu.php">Go back</a>';
                      <form method="post" action="testshoppingcart.php?action=add&id=<?php echo $row["id"]; ?>">  
                           <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">  
                                <!--<img src="<?php// echo $row["image"]; ?>" class="img-responsive" /><br />  -->
-                               <h4 class="text-info"><?php echo $row["itemName"]; ?></h4>  
+                               <h5 class="text-info"><?php echo $row["itemName"]; ?></h5>  
                                <h4 class="text-danger">RM <?php echo $row["price"]; ?></h4>  
                                <input type="text" name="quantity" class="form-control" value="1" />  
                                <input type="hidden" name="hidden_name" value="<?php echo $row["itemName"]; ?>" />  
                                <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />  
-                               <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />  
+                               <input type="submit" name="add_to_cart" class="btn btn-success" value="Add to Cart" />  
                           </div>  
                      </form>  
                 </div>  

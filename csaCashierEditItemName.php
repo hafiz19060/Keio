@@ -70,7 +70,7 @@ $id = $row['id'];
 
 
 echo '<form action = "process.php" method ="post"> ';
-echo 'Update item<br>Item name:<br>';
+echo '<h2><hr>Update item</h2><hr><br>Item name:<br>';
 echo "<input type = 'text' name = 'itemName' value = '$itemName'>";
 echo '<br>';
 echo 'SKU:<br>';

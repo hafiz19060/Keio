@@ -64,7 +64,7 @@ $pw = $row['password'];
 
 
 echo '<form action = "process.php" method ="post"> ';
-echo 'Admin Edit Profile<br>Username:<br>';
+echo '<br><h3>Admin Edit Profile</h3><br>Username:<br>';
 echo "<input type = 'text' name = 'newUname' value = '$id'>";
 echo "<input type = 'hidden' name = 'uname' value = '$id'>";
 echo '<br>';

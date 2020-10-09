@@ -1,3 +1,4 @@
+<fieldset>
 <?php
 session_start();
 echo "Welcome ".$_SESSION['id'];
@@ -34,10 +35,11 @@ function checkTime(i) {
   return i;
 }
 </script>
+
 <body onload="startTime()">
 
 <div id="txt"></div>
-
+</fieldset>
 <style>
 body {
 	
@@ -67,6 +69,7 @@ input[type=text] {
   padding: 10px 10px;
   margin: 8px 0;
   box-sizing: border-box;
+   font-family: "Lucida Console", Courier, monospace;
   
   border: 2px solid coral;
   outline: none;
@@ -76,8 +79,23 @@ input[type=text]:focus {
   background-color: lightyellow;
 }
 
-input[type = submit]{
-	  background-color: coral; 
+
+input[type=password] {
+  width:30%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid coral;
+  outline: none;
+   font-family: "Lucida Console", Courier, monospace;
+}
+
+input[type=password]:focus {
+   background-color: lightyellow;
+}
+
+input[type = submit], input[type=button]{
+	background-color: coral; 
   border: none;
   color: white;
   padding: 16px 32px;
@@ -93,20 +111,71 @@ input[type = submit]{
 	
 }
 
+	
+	
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 </style>
 
 <body>
-<div class="center">
-<p><a href="index.php">Log Out</a></p>
-<a href = "csaAdminProfile.php">View Profile</a><br><br>
-<a href = "csaRegCashier.php">Register Cashier</a><br><br>
-<a href = "csaAdminItem.php">Items</a><br><br>
-<a href = "csaAddStock.php">Add new stocks</a><br><br>
-<a href = "csaAdminDeleteCashier.php">Delete cashier</a><br><br>
-<a href = "csaAdminViewTransaction.php">View transaction</a><br><br>
-<a href = "csaAdminSalesReport.php">Sales report</a><br><br>
-<a href = "csaAdminShiftReport.php">Shift report</a><br><br>
-<br>
+<div class="center"><br><br>
+
+<div class="tooltip"><a href="index.php"><img src="lock.png" alt="Log Out" style="width:100px;height100px;"></a> 
+	<span class="tooltiptext">Log Out</span>
+</div>
+
+<div class="tooltip"><a href = "csaAdminProfile.php"><img src="profile.png" alt="View Profile" style="width:100px;height100px;"></a>
+	<span class="tooltiptext">View Profile</span><br>
+</div>
+
+<div class="tooltip"><a href = "csaRegCashier.php"><img src="+.png" alt="Register Cashier" style="width:100px;height100px;"></a>
+	<span class="tooltiptext">Register Cashier</span>
+</div>
+
+<div class="tooltip"><a href = "csaAdminItem.php"><img src="stock.png" alt="Items" style="width:100px;width100px;"></a>
+	<span class="tooltiptext">Inventory</span><br>
+</div>
+	
+<div class="tooltip"><a href = "csaAddStock.php"><img src="+.png" alt="Add New Stocks" style="width:100px;width:100px"></a>
+	<span class="tooltiptext">Add New Stock</span>
+</div>
+
+<div class="tooltip"><a href = "csaAdminDeleteCashier.php"><img src="cash_till.ico" alt="Delete Cashier" style="width:100px;width:100px"></a>
+	<span class="tooltiptext">View Cashier</span><br>
+</div>
+	
+<div class="tooltip"><a href = "csaAdminViewTransaction.php"><img src="cash_till.ico" alt="View Transaction" style="width:100px;height:100px;"></a>
+	<span class="tooltiptext">View Transaction</span>
+</div>
+
+<div class="tooltip"><a href = "csaAdminSalesReport.php"><img src="receipt.png" alt="Sales Report" style="width:100px;height:100px;"></a>
+	<span class="tooltiptext">Sales Report</span><br>
+</div>
+
+<div class="tooltip"><a href = "csaAdminShiftReport.php"><img src="report.png" alt="Shift Report" style="width:100px;heigth:100px;"></a>
+	<span class="tooltiptext">Shift Report</span>
+</div>
 
 </div>
 </body>

@@ -58,9 +58,10 @@ input[type = submit]{
 <?php
 include "csa.php";
 echo '
+<br>
 <a href = "csaCashierMenu.php">Back</a><br>
 <form action="" method="post">
-<fieldset style ="width:70%;"><legend>Option</legend>
+<hr><h2>Items</h2><hr>
 
 <tr><td> <label for="searchValue"> Search: </td><td><input type="text" id="searchValue" name=searchValue><br><br></td></tr>
 <td></td><td><input type=submit name = searchbyname value="By Items name">
@@ -85,17 +86,20 @@ else if(isSet($_POST['searchid']))
 else
 	$qry = viewItems();
 
-echo 'No of items: '.mysqli_num_rows($qry);
+echo '<br><br>No of items: '.mysqli_num_rows($qry);
 	echo '<br>';
-	
-	echo "<table border='1' width='1000'>
-	<tr>
-	<th>Item Name</th>
-	<th>SKU</th>
-	<th>Categories</th>
-	<th>Price</th>
-	<th>Id</th>
-	</tr>"; 
+	echo '<div style = "text:align:center;">
+ <table style="margin:10px auto" border="1" width="1000" align="center">
+  <tr>  
+            <th>Item Name</th>  
+            <th>SKU</th>  
+            <th>Categories</th>  
+            <th>Price</th>
+			<th>Id</th>
+			<th>Delete</th>
+			<th>Update</th>
+        </tr>';
+
 
 	while($row=mysqli_fetch_assoc($qry))
 		{

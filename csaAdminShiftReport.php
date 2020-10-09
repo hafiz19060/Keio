@@ -61,16 +61,20 @@ input[type = submit]{
 <?php
 include "csa.php";
 echo '<a href = "csaAdminMenu.php">Go back</a><br>';
+echo '<hr><h2>Shift report</h2><hr><br>';
 $qry = viewShiftReport();
 
 //echo 'No of transactions: '.mysqli_num_rows($qry);
 	echo '<br>';
 	
-	echo "<table border='1' width='1000'>
-	<tr>
-	<th>Name</th>
+	echo '<div style = "text:align:center;">
+ <table style="margin:10px auto" border="1" width="1000" align="center">
+  <tr>  
+    <th>Name</th>
 	<th>Last login</th>
-	</tr>"; 
+	
+	
+        </tr>';
 
 	while($row=mysqli_fetch_assoc($qry))
 		{

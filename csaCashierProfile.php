@@ -52,7 +52,14 @@ input[type = submit]{
   cursor: pointer;
   font-family: "Lucida Console", Courier, monospace;
 	
-	
+	table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table.center {
+  margin-left:100px; 
+  margin-right:100px;
+}
 }
 </style>
 <script>
@@ -87,10 +94,10 @@ function checkTime(i) {
 </script>
 <body onload="startTime()">
 
-<div id="txt"></div>
+<div id="txt"></div><br>
 
 <a href = "csaCashierMenu.php">Return to Menu</a><br><br>
-
+<h3>Cashier details</h3>
 </html>
 <?php
 include "csa.php";
@@ -102,14 +109,17 @@ $id = $_SESSION['id'];
 
 $i = viewProfile($id);
 
-echo "<table border='1' width='1000'>
-	<tr>
-	<th>Username</th>
-	<th>Password</th>
-	<th>User type</th>
-	
 
-	</tr>"; 
+
+echo '<div style = "text:align:center;">
+ <table style="margin:10px auto" border="1" width="1000" align="center">
+  <tr>  
+            <th>Username</th>  
+            <th>Password</th>  
+            <th>User type</th>  
+              
+        </tr>';
+
 	
 while($row=mysqli_fetch_assoc($i)){
 	echo "<tr>";

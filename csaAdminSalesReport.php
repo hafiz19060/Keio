@@ -61,21 +61,23 @@ input[type = submit]{
 <?php
 include "csa.php";
 echo '<a href = "csaAdminMenu.php">Go back</a><br>';
+echo '<hr><h2>Sales report</h2><hr><br>';
 $qry = viewTransaction();
 
 //echo 'No of transactions: '.mysqli_num_rows($qry);
 	echo '<br>';
 	
-	echo "<table border='1' width='1000'>
-	<tr>
-	<th>Item Name</th>
+	echo '<div style = "text:align:center;">
+ <table style="margin:10px auto" border="1" width="1000" align="center">
+  <tr>  
+            <th>Item Name</th>
 	<th>Quantity</th>
 	<th>Price</th>
 	<th>Total price</th>
 	<th>Method</th>
-	<th>Date</th>
-	</tr>"; 
-
+	<th>Date</th> 
+	
+        </tr>';
 	while($row=mysqli_fetch_assoc($qry))
 		{
 	echo "<tr>";

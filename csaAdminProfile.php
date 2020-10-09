@@ -91,8 +91,8 @@ function checkTime(i) {
 <body onload="startTime()">
 
 <div id="txt"></div>
-<a href = "csaAdminMenu.php">Return to Menu</a><br><br>
-
+<br><a href = "csaAdminMenu.php">Return to Menu</a><br><br>
+<h3>Admin details</h3>
 </html>
 <?php
 include "csa.php";
@@ -104,14 +104,15 @@ $id = $_SESSION['id'];
 
 $i = viewProfile($id);
 
-echo "<table border='1' width='1000'>
-	<tr>
-	<th>Username</th>
+	echo '<div style = "text:align:center;">
+ <table style="margin:10px auto" border="1" width="1000" align="center">
+  <tr>  
+         <th>Username</th>
 	<th>Password</th>
 	<th>User type</th>
-	<th>Action</th>
-
-	</tr>"; 
+	<th>Action</th> 
+              
+        </tr>';
 	
 while($row=mysqli_fetch_assoc($i)){
 	echo "<tr>";

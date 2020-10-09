@@ -61,27 +61,23 @@ include "csa.php";
 echo '<a href = "csaAdminMenu.php">Go back</a><br>';
 $qry = viewCashier();
 
-echo 'No of cashiers: '.mysqli_num_rows($qry);
+echo '<br>No of cashiers: '.mysqli_num_rows($qry);
 	echo '<br>';
 	
-	echo "<table border='1' width='1000'>
-	<tr>
-	<th>Username</th>
+		echo ' <table style="margin:10px auto" border="1" width="1000" align="center">
+  <tr>  
+            <th>Username</th>
 	<th>Password</th>
-	<th>Name</th>
-	<th>Mobile Number</th>
-	<th>Ic Number</th>
-	
-	</tr>"; 
+	<th>User type</th>
+	<th>Action</th>
+        </tr>';
 
 	while($row=mysqli_fetch_assoc($qry))
 		{
 	echo "<tr>";
 	echo "<td>" . $row['username'] . "</td>";
 	echo "<td>" . $row['password'] . "</td>";
-	echo "<td>" . $row['name'] . "</td>";
-	echo "<td>" . $row['mobilenum'] . "</td>";
-	echo "<td>" . $row['icnum'] . "</td>";
+	echo "<td>" . $row['usertype'] . "</td>";
 	$name = $row['username'];
 	echo '<td>';
 	echo '<form action="process.php" method="post" >';

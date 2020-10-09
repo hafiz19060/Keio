@@ -30,6 +30,7 @@ input[type=text] {
   padding: 10px 10px;
   margin: 8px 0;
   box-sizing: border-box;
+   font-family: "Lucida Console", Courier, monospace;
   
   border: 2px solid coral;
   outline: none;
@@ -39,8 +40,23 @@ input[type=text]:focus {
   background-color: lightyellow;
 }
 
-input[type = submit]{
-	  background-color: coral; 
+
+input[type=password] {
+  width:30%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid coral;
+  outline: none;
+   font-family: "Lucida Console", Courier, monospace;
+}
+
+input[type=password]:focus {
+   background-color: lightyellow;
+}
+
+input[type = submit], input[type=button]{
+	background-color: coral; 
   border: none;
   color: white;
   padding: 16px 32px;
@@ -52,7 +68,10 @@ input[type = submit]{
   transition-duration: 0.2s;
   cursor: pointer;
   font-family: "Lucida Console", Courier, monospace;
-	}
+	
+	
+}
+
 	
 	
 .tooltip {
@@ -79,14 +98,18 @@ input[type = submit]{
   visibility: visible;
 }
 
-</style>
 
+</style>
+<body>
+<fieldset>
+<body onload="startTime()">
+<div id="txt"></div>
 <?php
-session_start();
+session_start(); '<br>';
 echo "Welcome ".$_SESSION['id'];
 
 ?>
-
+</fieldset>
 <script>
 function startTime() {
   var today = new Date();
@@ -117,14 +140,10 @@ function checkTime(i) {
   return i;
 }
 </script>
-<iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:150px;height:150px;"src="https://www.clocklink.com/html5embed.php?clock=041&timezone=GMT0800&color=red&size=150&Title=&Message=&Target=&From=2020,1,1,0,0,0&Color=red"></iframe>
-<body onload="startTime()">
-
-
 
 <br><br><br><br>
 
-	<div class="tooltip"><a href="Login/csaLogin.php"><img src="lock.png" alt="Log Out" style="width:100px;height100px;"></a> 
+	<div class="tooltip"><a href="index.php"><img src="lock.png" alt="Log Out" style="width:100px;height100px;"></a> 
 	<span class="tooltiptext">Log Out</span>
 </div>
 
@@ -150,6 +169,8 @@ function checkTime(i) {
 
 
 </div>
+
+</body>
 </html>
 
 

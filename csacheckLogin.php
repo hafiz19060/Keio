@@ -29,6 +29,6 @@ if($validUser)
 else {
 	
 	echo "<center><br><br>Wrong Username or Password";
-	header( "refresh:1; url=csaLogin.php" );
+	header( "refresh:1; url=index.php" );
 	}
 ?>

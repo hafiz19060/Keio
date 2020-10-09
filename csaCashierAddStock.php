@@ -54,8 +54,10 @@ input[type = submit]{
 	
 }
 </style>
+<br>
 <a href = "csaCashierMenu.php">Back</a>
 <form action = "process.php" method = "post">
+<br>
 Item name:<br>
 <input type = "text" name = "itemName"><br>
 SKU:<br>
